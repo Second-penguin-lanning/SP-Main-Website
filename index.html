@@ -12,7 +12,7 @@
             --sky-blue: #e0f4ff;
             --text-color: #333;
             --white: #ffffff;
-            --accent-orange: #ff8c00; /* ニュース用のアクセントカラー */
+            --accent-orange: #ff8c00;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -69,7 +69,7 @@
             font-weight: bold;
         }
 
-        /* Hero Section & News Overlay */
+        /* Hero Section */
         .hero {
             height: 85vh;
             background: linear-gradient(rgba(0,91,172,0.6), rgba(0,91,172,0.4)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover;
@@ -100,10 +100,9 @@
             margin-bottom: 30px;
             font-weight: bold;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-            color: white;
         }
         
-        /* --- News Small Box --- */
+        /* News Box */
         .news-box {
             position: absolute;
             bottom: 30px;
@@ -123,9 +122,6 @@
             font-size: 0.9rem;
             margin-bottom: 8px;
             color: var(--accent-orange);
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
         .news-item {
@@ -139,9 +135,21 @@
             text-overflow: ellipsis;
         }
 
-        .news-item:hover { color: var(--accent-green); }
+        /* Sections */
+        section { padding: 100px 10%; background: var(--white); margin: 20px 0; }
+        h2 { text-align: center; color: var(--main-blue); margin-bottom: 50px; position: relative; padding-bottom: 10px; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 3px; background: var(--accent-green); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: var(--sky-blue); padding: 30px; border-radius: 15px; border-left: 5px solid var(--main-blue); }
 
-        /* --- Modal System --- */
+        /* Buttons */
+        .btn { display: inline-block; padding: 12px 30px; background: var(--main-blue); color: white !important; text-decoration: none; border-radius: 50px; transition: 0.3s; margin-top: 20px; font-weight: bold; border: 2px solid var(--main-blue); cursor: pointer; }
+        .btn:hover { background: var(--accent-green); border-color: var(--accent-green); transform: scale(1.05); }
+        .btn-outline { background: transparent; border: 2px solid var(--main-blue); color: var(--main-blue) !important; }
+        .btn-outline:hover { background: var(--main-blue); color: white !important; }
+
+        /* Modal */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -151,54 +159,26 @@
             align-items: center;
             z-index: 2000;
         }
+        .modal-content { background: white; padding: 40px; border-radius: 15px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; }
+        .modal-close { position: absolute; top: 15px; right: 15px; font-size: 1.5rem; cursor: pointer; }
 
-        .modal-content {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px; right: 15px;
-            font-size: 1.5rem; cursor: pointer;
-        }
-
-        .modal-date { color: #888; font-size: 0.9rem; }
-        .modal-title { color: var(--main-blue); margin: 10px 0; }
-        .modal-body { line-height: 1.6; }
-
-        /* Remaining Sections (Keep same as your code) */
-        section { padding: 100px 10%; background: var(--white); margin: 20px 0; }
-        h2 { text-align: center; color: var(--main-blue); margin-bottom: 50px; position: relative; padding-bottom: 10px; }
-        h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 3px; background: var(--accent-green); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: var(--sky-blue); padding: 30px; border-radius: 15px; border-left: 5px solid var(--main-blue); }
-        .btn { display: inline-block; padding: 12px 30px; background: var(--main-blue); color: white !important; text-decoration: none; border-radius: 50px; transition: 0.3s; margin-top: 20px; font-weight: bold; border: 2px solid var(--main-blue); }
-        .btn:hover { background: var(--accent-green); border-color: var(--accent-green); transform: scale(1.05); }
-        .btn-outline { background: transparent; border: 2px solid var(--main-blue); color: var(--main-blue) !important; }
-        .btn-outline:hover { background: var(--main-blue); color: white !important; }
+        /* Footer & Others */
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         table th, table td { padding: 15px; border-bottom: 1px solid #ddd; text-align: left; }
         table th { width: 30%; color: var(--main-blue); }
-        .transition-area { background: var(--accent-green); color: white; text-align: center; padding: 40px; }
         footer { background: #333; color: white; text-align: center; padding: 20px; }
-        .representative-container { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+        .representative-container { display: flex; flex-wrap: wrap; gap: 40px; }
         .representative-text { flex: 1; min-width: 300px; }
-        .representative-image { flex: 0 0 300px; max-width: 100%; }
-        .representative-image img { width: 100%; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .representative-image { flex: 0 0 300px; }
+        .representative-image img { width: 100%; border-radius: 10px; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             .news-box { width: 90%; right: 5%; bottom: 20px; }
             header { flex-direction: column; }
-            .logo { margin-bottom: 15px; }
+            nav { margin-top: 10px; }
             nav a { margin: 0 10px; font-size: 0.8rem; }
+            .representative-image { flex: 1 1 100%; order: -1; }
         }
     </style>
 </head>
@@ -227,17 +207,16 @@
 
     <div class="news-box fade-in">
         <h3>📢 お知らせ</h3>
-        <div id="news-list">
-            </div>
+        <div id="news-list"></div>
     </div>
 </section>
 
 <div id="newsModal" class="modal-overlay">
     <div class="modal-content">
         <span class="modal-close" onclick="closeModal()">&times;</span>
-        <div class="modal-date" id="modalDate"></div>
-        <h2 class="modal-title" id="modalTitle"></h2>
-        <div class="modal-body" id="modalBody"></div>
+        <div id="modalDate" style="color:#888; font-size:0.9rem;"></div>
+        <h2 id="modalTitle" style="text-align:left; margin:10px 0; color:var(--main-blue);"></h2>
+        <div id="modalBody" style="line-height:1.6;"></div>
     </div>
 </div>
 
@@ -247,7 +226,6 @@
         <div class="representative-text">
             <p>皆様、こんにちは。セコンドペンギン企画代表の德永と申します。</p>
             <p style="margin-top: 1.5em;">これまで仕事や海外駐在を通じて、東南アジア・東アジアの多くの方々と出会い、日々の暮らしや仕事を共にしてきました。その中で、日本で学び、働き、日本の文化や習慣を大切にしながら社会の一員として歩みたいと考える、真面目で意欲ある方々が少なからずいることを実感しました。</p>
-            <p style="margin-top: 1.5em;">私は、日本社会のルールや価値観を尊重することを前提に、人と人が無理なく関われる環境づくりに関わりたいと考えています。</p>
             <p style="margin-top: 1.5em;">公務員退職後、誠意をもって一つひとつのご縁に向き合ってまいります。どうぞよろしくお願いいたします。</p>
         </div>
         <div class="representative-image">
@@ -274,6 +252,22 @@
     </div>
 </section>
 
+<section id="foreign" class="fade-in" style="background-color: var(--sky-blue);">
+    <div style="background: white; padding: 60px 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <h2 style="margin-bottom: 30px;">For International Residents</h2>
+        <p style="max-width: 700px; margin: 0 auto 20px; font-size: 1.1rem; color: #555;">
+            日本での生活や仕事をスタートさせる皆さまを、専門的な視点からサポートします。<br>
+            在留資格（ビザ）の申請・更新手続きから、日本での就職・転職、学校への入学手続き、そして日々の暮らしの困りごとまで、安心してお任せください。
+        </p>
+        <p style="color: var(--main-blue); font-weight: bold; margin-bottom: 30px;">
+            We support your Visa application, Career, and Life in Japan.
+        </p>
+        <a href="https://second-penguin-lanning.github.io/Foreigners-Website/" class="btn" target="_blank" rel="noopener noreferrer">
+            Visit our English/Multilingual Site ↗
+        </a>
+    </div>
+</section>
+
 <section id="company" class="fade-in">
     <h2>会社概要</h2>
     <table>
@@ -289,27 +283,23 @@
 </footer>
 
 <script>
-    // ニュースデータ（ここを増やすだけでニュースが追加されます）
     const newsData = [
         {
             date: "2024.06.15",
             title: "【重要】技能実習制度から「育成就労制度」への移行について",
             content: `
-                <p>2024年6月、改正出入国管理法が成立し、従来の「技能実習制度」を廃止し、新たに「育成就労制度」が創設されることが決定しました。</p>
-                <br>
+                <p>2024年6月、改正出入国管理法が成立し、従来の「技能実習制度」を廃止し、新たに「育成就労制度」が創設されることが決定しました。</p><br>
                 <strong>■ 主な変更点：</strong>
                 <ul>
-                    <li><strong>目的の明確化：</strong> 単なる国際貢献から「人材確保と育成」に重点が置かれます。</li>
-                    <li><strong>転籍制限の緩和：</strong> 一定の条件下で、自己都合による転籍（転職）が認められるようになります。</li>
-                    <li><strong>特定技能への接続：</strong> 3年間の育成期間を経て、スムーズに「特定技能1号」へ移行できるルートが構築されます。</li>
-                </ul>
-                <br>
-                <p>施行は2027年頃までに行われる予定です。セコンドペンギン企画では、最新の政省令に基づき、企業の皆様の制度移行を全力でサポートいたします。</p>
+                    <li><strong>目的：</strong> 人材確保と育成。</li>
+                    <li><strong>転籍制限の緩和：</strong> 一定条件下で転籍が可能に。</li>
+                    <li><strong>特定技能への接続：</strong> スムーズな移行ルートが構築。</li>
+                </ul><br>
+                <p>セコンドペンギン企画では、最新の政省令に基づき、制度移行をサポートいたします。</p>
             `
         }
     ];
 
-    // ニュース一覧を表示する関数
     function renderNews() {
         const list = document.getElementById('news-list');
         newsData.forEach((news, index) => {
@@ -321,7 +311,6 @@
         });
     }
 
-    // モーダルを開く
     function openModal(index) {
         const news = newsData[index];
         document.getElementById('modalDate').innerText = news.date;
@@ -330,31 +319,14 @@
         document.getElementById('newsModal').style.display = 'flex';
     }
 
-    // モーダルを閉じる
-    function closeModal() {
-        document.getElementById('newsModal').style.display = 'none';
-    }
+    function closeModal() { document.getElementById('newsModal').style.display = 'none'; }
+    window.onclick = (e) => { if(e.target == document.getElementById('newsModal')) closeModal(); }
 
-    // 画面外クリックで閉じる
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('newsModal')) {
-            closeModal();
-        }
-    }
-
-    // フェードインアニメーション
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-in').forEach(section => {
-        observer.observe(section);
-    });
-
+    document.querySelectorAll('.fade-in').forEach(s => observer.observe(s));
     window.addEventListener('DOMContentLoaded', () => {
         renderNews();
         document.querySelector('.hero-content').classList.add('visible');
