@@ -216,6 +216,23 @@
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .card { background: var(--sky-blue); padding: 30px; border-radius: 15px; border-left: 5px solid var(--main-blue); }
+
+        /* Hero Title Slide Animation */
+.hero h1 {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-title-hide {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.hero-title-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+        
 /* --- Advisor Section --- */
 .advisor-section {
     background: linear-gradient(135deg, #ffffff, #f0f8ff);
@@ -333,7 +350,7 @@
 
 <section class="hero">
     <div class="hero-content fade-in">
-        <h1>フィリピンなどの優秀な人材を繋ぎます</h1>
+        <h1 id="hero-title">フィリピンなどの優秀な人材を繋ぎます</h1>
         <p>企業様の外国人雇用支援、外国人の日本就業/生活支援</p>
         <p style="color: #f0f0f0; font-weight: normal;">実務と現場の経験を活かし、皆様の「挑戦」を伴走支援します。</p>
         <a href="#contact" class="btn">お問合せはこちら</a>
@@ -611,6 +628,28 @@
         document.querySelector('.hero-content').classList.add('visible');
         document.querySelector('.news-box').classList.add('visible');
     });
+        // ===== Hero Title Slide =====
+    const titles = [
+        "フィリピンなどの優秀な人材を繋ぎます",
+        "企業様の外国人雇用を一気通貫でサポート",
+        "求人、求職、留学のことならおまかせください"
+    ];
+
+    const heroTitle = document.getElementById("hero-title");
+    let currentIndex = 0;
+
+    setInterval(() => {
+        heroTitle.classList.add("hero-title-hide");
+
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % titles.length;
+            heroTitle.textContent = titles[currentIndex];
+            heroTitle.classList.remove("hero-title-hide");
+            heroTitle.classList.add("hero-title-show");
+        }, 600);
+
+    }, 3000);
+
 </script>
 </body>
 </html>
