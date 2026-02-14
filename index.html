@@ -103,21 +103,18 @@
             flex-wrap: wrap;
             gap: 30px;
         }
-/* ===== ヒーロー上部 強調ステータス帯 ===== */
-.hero-status-bar {
+.header-status-bar {
     width: 100%;
-    background: rgba(255,255,255,0.95);
-    color: var(--main-blue);
-    font-size: 0.9rem;
+    background: linear-gradient(rgba(0,91,172,0.6), rgba(0,91,172,0.6)),
+                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover;
+    color: #fff9c4; /* 薄い黄色 */
+    font-size: 0.95rem;
     font-weight: bold;
-    padding: 8px 20px;
-    border-left: 6px solid var(--accent-orange);
-    border-radius: 6px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    text-align: left;
-}
-        .hero-content { flex: 1; min-width: 300px; color: white; text-align: left; }
+    text-align: center;
+    padding: 12px 10px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}        .hero-content { flex: 1; min-width: 300px; color: white; text-align: left; }
         .hero h1 {
             font-size: 2.2rem;
             color: var(--main-blue);
@@ -222,9 +219,10 @@
 </header>
 
 <section class="hero">
- <div class="hero-status-bar">
-        登録支援機関（3月登録予定）｜有料職業紹介事業（3月登録予定）
-    </div>
+<div class="header-status-bar">
+    登録支援機関（3月登録予定）<br>
+    有料職業紹介事業（3月登録予定）
+</div>
     <div class="hero-content">
         <h1 id="hero-title">フィリピンなどの優秀な人材を繋ぎます</h1>
         <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">企業様の外国人雇用支援、外国人の日本就業/生活支援</p>
@@ -249,7 +247,7 @@
     <div class="representative-container">
         <div class="representative-text">
             <p><strong>徳永 良雄</strong> と申します。</p>
-            <p style="margin-top: 15px;">31年間の公務員生活を経て、日本で学び、働きたいと願う真面目な若者たちと日本社会を繋ぐため、本事業を立ち上げました。日本語教育や入管手続きの現場経験を活かし、行政書士としても皆様をサポートいたします。</p>
+            <p style="margin-top: 15px;">31年間の公務員生活を経て、日本で学び、働きたいと願う真面目な若者たちと日本社会を繋ぐため、本事業を立ち上げました。企業様の外国人雇用支援、外国人の日本就業/生活支援を、登録支援機関勤務、日本語教師、そして行政書士としての経験を基に適切に対応してまいります。</p>
             <p style="margin-top: 15px;">変化する国の政策や現場の実情に合わせ、お客様と共に課題解決に取り組みます。まずはお気軽にご相談ください。</p>
             <div style="margin-top: 20px;">
                 <a href="https://jrbuie.readdy.co/" class="btn" target="_blank">行政書士業務のサイト ↗</a>
