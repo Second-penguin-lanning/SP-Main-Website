@@ -103,22 +103,21 @@
             flex-wrap: wrap;
             gap: 30px;
         }
-
-        .hero-content { flex: 1; min-width: 300px; color: white; text-align: left; }
-/* Hero 上部ステータス表示 */
-.hero-status {
-    display: inline-block;
+/* ===== ヒーロー上部 強調ステータス帯 ===== */
+.hero-status-bar {
+    width: 100%;
     background: rgba(255,255,255,0.95);
     color: var(--main-blue);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: bold;
-    padding: 6px 14px;
-    border-left: 4px solid var(--accent-orange);
-    border-radius: 4px;
-    margin-bottom: 15px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    padding: 8px 20px;
+    border-left: 6px solid var(--accent-orange);
+    border-radius: 6px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    text-align: left;
 }
-
+        .hero-content { flex: 1; min-width: 300px; color: white; text-align: left; }
         .hero h1 {
             font-size: 2.2rem;
             color: var(--main-blue);
@@ -223,11 +222,10 @@
 </header>
 
 <section class="hero">
+ <div class="hero-status-bar">
+        登録支援機関（3月登録予定）｜有料職業紹介事業（3月登録予定）
+    </div>
     <div class="hero-content">
-<div class="hero-status">
-    登録支援機関（3月登録予定）｜有料職業紹介事業（3月登録予定）
-</div>
-
         <h1 id="hero-title">フィリピンなどの優秀な人材を繋ぎます</h1>
         <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">企業様の外国人雇用支援、外国人の日本就業/生活支援</p>
         <p style="margin-bottom: 20px; opacity: 0.9;">実務と現場の経験を活かし、皆様の「挑戦」を伴走支援します。</p>
