@@ -150,44 +150,6 @@
         .news-item { padding: 8px 0; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
         .cat-label { font-size: 0.65rem; padding: 2px 6px; border-radius: 3px; color: #fff; font-weight: bold; margin-right: 5px; }
         .news-title { font-weight: bold; font-size: 0.85rem; color: var(--main-blue); }
-/* Link Box（公的機関リンク用） */
-.link-box {
-    background: rgba(255, 255, 255, 0.98);
-    padding: 20px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 450px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border-top: 5px solid var(--main-blue);
-    margin-top: 20px;
-}
-
-.link-box h3 {
-    font-size: 1.05rem;
-    margin-bottom: 10px;
-    color: var(--main-blue);
-}
-
-#link-list {
-    max-height: 180px;
-    overflow-y: auto;
-}
-
-.link-item {
-    padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.link-item a {
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--main-blue);
-    font-size: 0.85rem;
-}
-
-.link-item a:hover {
-    text-decoration: underline;
-}
 
         /* General Sections */
         section { padding: 80px 10%; background: var(--white); margin: 20px 0; }
@@ -251,6 +213,7 @@
         <a href="#business">企業様</a>
         <a href="#foreign">International</a>
         <a href="#company">会社概要</a>
+        <a href="#links">関連リンク</a>
         <a href="#contact">お問合せ</a>
     </nav>
     <div class="lang-switch">
@@ -282,37 +245,6 @@
         </div>
         <div id="news-list"></div>
     </div>
-<div class="link-box">
-    <h3>🔗 関連機関リンク</h3>
-    <div id="link-list">
-
-        <div class="link-item">
-            <a href="https://www.moj.go.jp/isa/" target="_blank">
-                出入国在留管理庁（入国管理局）
-            </a>
-        </div>
-
-        <div class="link-item">
-            <a href="https://www.jac.or.jp/" target="_blank">
-                JAC（外国人技能実習機構）
-            </a>
-        </div>
-
-        <div class="link-item">
-            <a href="https://www.maff.go.jp/" target="_blank">
-                農林水産省
-            </a>
-        </div>
-
-        <div class="link-item">
-            <a href="#" target="_blank">
-                農水省所管関連団体協議会（リンク設定可）
-            </a>
-        </div>
-
-    </div>
-</div>
-
 </section>
 
 <section id="message" class="fade-in">
@@ -446,6 +378,73 @@
         <tr style="border-bottom: 1px solid #eee;"><th style="padding: 15px; text-align: left;">設立</th><td>2024年6月13日</td></tr>
         <tr style="border-bottom: 1px solid #eee;"><th style="padding: 15px; text-align: left;">所在地</th><td>兵庫県神戸市</td></tr>
     </table>
+</section>
+<section id="links" class="fade-in">
+    <h2>関連リンク（制度・手続き情報）</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>入管（出入国在留管理庁）</h3>
+            <p>
+                在留資格や手続きの公式情報はこちら。
+            </p>
+            <a href="https://www.moj.go.jp/isa/" target="_blank" class="btn" style="margin-top:15px;">
+                出入国在留管理庁 公式サイト ↗
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>特定技能</h3>
+            <p>
+                特定技能制度の概要・分野別情報。
+            </p>
+            <a href="https://www.moj.go.jp/isa/policies/ssw/" target="_blank" class="btn" style="margin-top:15px;">
+                特定技能制度ページ ↗
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>育成就労制度</h3>
+            <p>
+                技能実習に代わる新制度の最新情報。
+            </p>
+            <a href="https://www.moj.go.jp/isa/policies/ikusei.html" target="_blank" class="btn" style="margin-top:15px;">
+                育成就労制度について ↗
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>技術・人文知識・国際業務（技人国）</h3>
+            <p>
+                ホワイトカラー職種向け在留資格。
+            </p>
+            <a href="https://www.moj.go.jp/isa/applications/status/gijinkoku.html" target="_blank" class="btn" style="margin-top:15px;">
+                技人国の解説 ↗
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>永住許可</h3>
+            <p>
+                永住申請の要件や必要書類。
+            </p>
+            <a href="https://www.moj.go.jp/isa/applications/procedures/nyukan_nyukan50.html" target="_blank" class="btn" style="margin-top:15px;">
+                永住許可について ↗
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>留学（文部科学省）</h3>
+            <p>
+                日本留学制度や支援情報。
+            </p>
+            <a href="https://www.mext.go.jp/a_menu/koutou/ryugaku/" target="_blank" class="btn" style="margin-top:15px;">
+                文部科学省 留学情報 ↗
+            </a>
+        </div>
+
+    </div>
 </section>
 
 <section id="contact" class="fade-in">
